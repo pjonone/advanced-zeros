@@ -16,7 +16,19 @@ module.exports = function getZerosCount(number, base) {
         var result = Math.floor(number / num);
         if (result !== 0) sumArr.push(result);
     }
-    return sumArr.reduce(function (sum, current) {
+    let summ = sumArr.reduce(function (sum, current) {
         return sum + current;
     });
+    var count = 0;
+    for(var x = 0; x < arr.length; ++x){
+        if(arr[x] == z)
+            count++;
+    }
+    if (count > 1) {
+        return Math.floor(summ/count);
+    }
+    else {
+        return summ;
+    }
+
 }
